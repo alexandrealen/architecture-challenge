@@ -1,14 +1,17 @@
 ﻿using Domain.Enums;
 using Domain.Models;
 
-namespace Tests.Unit.Domain
+namespace UnitTests.Domain
 {
     public class RelatorioTests
     {
         [Theory]
-        [InlineData(10, 10, 0)]
-        [InlineData(100, 10, -90)]
-        [InlineData(9.95, 10, 0.05)]
+        #pragma warning disable format
+        //         debito    credito    consolidado
+        [InlineData(10,          10,        0)]
+        [InlineData(100,         10,        -90)]
+        [InlineData(9.95,        10,        0.05)]
+        #pragma warning restore format
         public void Deve_consolidar_saldo_corretamente(decimal debito, decimal credito, decimal consolidado)
         {
             //Arrange

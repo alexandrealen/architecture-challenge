@@ -24,10 +24,24 @@ namespace Host
                 options => options.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer")), 
                 ServiceLifetime.Transient);
 
-            using (var scope = builder.Services.BuildServiceProvider().CreateScope())
+            var migrationSuceeded = false;
+            while (!migrationSuceeded)
             {
-                var dbContext = scope.ServiceProvider.GetRequiredService<FluxoDeCaixaRepository>();
-                dbContext.Database.Migrate();
+                try
+                {
+                    using (var scope = builder.Services.BuildServiceProvider().CreateScope())
+                    {
+                        var dbContext = scope.ServiceProvider.GetRequiredService<FluxoDeCaixaRepository>();
+                        dbContext.Database.Migrate();
+                    }
+
+                    migrationSuceeded = true;
+                }
+                catch (Exception _)
+                {
+                    Console.WriteLine("Aguardando inicialização do banco de dados...");
+                    Thread.Sleep(3000);
+                }
             }
 
 

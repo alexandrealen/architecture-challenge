@@ -1,7 +1,7 @@
 ﻿using Domain.Enums;
 using Domain.Models;
 
-namespace Tests.Unit.Domain
+namespace UnitTests.Domain
 {
     public class LancamentoTests
     {

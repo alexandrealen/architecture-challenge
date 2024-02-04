@@ -6,7 +6,7 @@ using NSubstitute;
 using NSubstitute.ReceivedExtensions;
 using Services;
 
-namespace Tests.Unit.Services
+namespace UnitTests.Services
 {
     public class FluxoDeCaixaServiceTests
     {
