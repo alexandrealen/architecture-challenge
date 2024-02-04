@@ -1,4 +1,8 @@
-﻿# Desenho da solução
+# Desafio
+
+<img src="img/desafio.png">
+ 
+ # Desenho da solução
 
 <img src="img/architecture.png">
 
@@ -31,18 +35,6 @@ dotnet run
 
 # Utilizando a aplicação
 
-É possível utilizar a aplicação via swagger acessando
-
-```url
-http://localhost:8000/swagger/index.html
-```
-
-As rotas são RESTful e de uso intuitivo
-
-<img src="img/endpoints.png"> <br> <br>
-
-#### Tambem é possível utiliza-la com requisições manuais:
-
 * Para obter o relatório com o saldo consolidado e os lançamentos de hoje
 ```
 curl -X 'GET' 'http://localhost:8000/fluxodecaixa/relatorio' -H 'accept: text/plain'
@@ -70,6 +62,12 @@ curl -X 'POST' \
 }'
 ```
 
-# Desafio original
+#### Tambem é possível utilizar a aplicação via swagger acessando
 
-<img src="img/desafio.png">
+```url
+http://localhost:8000/swagger/index.html
+```
+
+As rotas são RESTful e de uso intuitivo
+
+<img src="img/endpoints.png"> <br> <br>
