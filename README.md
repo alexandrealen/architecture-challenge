@@ -47,7 +47,7 @@ curl -X 'POST' \
   -H 'accept: text/plain' \
   -H 'Content-Type: application/json' \
   -d '{
-  "valor": "
+  "valor": "100.50"
 }'
 ```
 
@@ -70,4 +70,4 @@ http://localhost:8000/swagger/index.html
 
 As rotas são RESTful e de uso intuitivo
 
-<img src="img/endpoints.png"> <br> <br>
+<img src="img/endpoints.png">
