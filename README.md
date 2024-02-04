@@ -18,7 +18,7 @@ docker-compose up
 
 ## Local
 
-Para executar localmente é necessário um [sqlserver](https://www.microsoft.com/pt-br/sql-server/sql-server-downloads) de pé e o [sdk do dotnet](https://dotnet.microsoft.com/pt-br/download) instalado.
+Para executar localmente é necessário um [sqlserver](https://www.microsoft.com/pt-br/sql-server/sql-server-downloads) de pé e o [sdk do dotnet](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-aspnetcore-7.0.15-windows-hosting-bundle-installer) instalado.
 
 * Configure a connection string do seu sqlserver no arquivo appsettings.json localizado em 
 
