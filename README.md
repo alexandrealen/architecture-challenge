@@ -34,7 +34,7 @@ dotnet run
 É possível utilizar a aplicação via swagger acessando
 
 ```url
-https://localhost:8000/swagger/index.html
+http://localhost:8000/swagger/index.html
 ```
 
 As rotas são RESTful e de uso intuitivo
