@@ -39,7 +39,7 @@ namespace Host
                 }
                 catch (Exception _)
                 {
-                    Console.WriteLine("Aguardando inicialização do banco de dados...");
+                    Console.WriteLine("Aguardando inicializacao do banco de dados...");
                     Thread.Sleep(3000);
                 }
             }

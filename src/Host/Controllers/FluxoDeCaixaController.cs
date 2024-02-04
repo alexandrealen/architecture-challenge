@@ -37,13 +37,13 @@ namespace Host.Controllers
         /// Permite lancar um debito
         /// </summary>
         [HttpPost("debitos")]
-        [ProducesResponseType(typeof(IEnumerable<Lancamento>), (int)HttpStatusCode.Created)]
+        [ProducesResponseType(typeof(Lancamento), (int)HttpStatusCode.Created)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         public async Task<IActionResult> LancarDebito([FromBody] LancamentoRequestDto dto, CancellationToken ct)
         {
-            var result = await _fluxoDeCaixaService.SalvarLancamentoAsync(Convert.ToDecimal(dto.Valor, new CultureInfo("en-US")), NaturezaLancamento.Debito, ct);
+            var lancamento = await _fluxoDeCaixaService.SalvarLancamentoAsync(Convert.ToDecimal(dto.Valor, new CultureInfo("en-US")), NaturezaLancamento.Debito, ct);
 
-            return StatusCode((int)HttpStatusCode.Created, result);
+            return StatusCode((int)HttpStatusCode.Created, JsonSerializer.Serialize(lancamento));
         }
 
         /// <summary>
@@ -54,9 +54,9 @@ namespace Host.Controllers
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         public async Task<IActionResult> LancarCredito([FromBody] LancamentoRequestDto dto, CancellationToken ct)
         {
-            var result = await _fluxoDeCaixaService.SalvarLancamentoAsync(Convert.ToDecimal(dto.Valor, new CultureInfo("en-US")), NaturezaLancamento.Credito, ct);
+            var lancamento = await _fluxoDeCaixaService.SalvarLancamentoAsync(Convert.ToDecimal(dto.Valor, new CultureInfo("en-US")), NaturezaLancamento.Credito, ct);
 
-            return StatusCode((int)HttpStatusCode.Created, result);
+            return StatusCode((int)HttpStatusCode.Created, JsonSerializer.Serialize(lancamento));
         }
     }
 }
