@@ -6,7 +6,7 @@
 
 ## Container
 
-Execute o comando na raiz do projeto
+Tendo o [Docker](https://www.docker.com/products/docker-desktop/) instalado execute o comando na raiz do projeto
 
 ```bash
 docker-compose up
